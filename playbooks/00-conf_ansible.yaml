@@ -4,4 +4,4 @@
     - "all_vars/galaxies.yaml"
   gather_facts: false
   roles:
-    - "confansible"
+    - confansible

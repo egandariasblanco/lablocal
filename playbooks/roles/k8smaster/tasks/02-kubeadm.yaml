@@ -1,0 +1,14 @@
+- name: Configurar kudeadm
+  shell:
+    cmd: kubeadm config images pull
+  become: yes
+
+- name: Configurar kudeadm
+  shell:
+    cmd: kubeadm init --pod-network-cidr 192.169.0.0/16
+  register: kudeadm_output
+  become: yes
+
+- name: mensaje
+  debug: msg="{{ kudeadm_output }}"
+  delegate_to: 127.0.0.1

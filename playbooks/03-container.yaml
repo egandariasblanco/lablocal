@@ -1,4 +1,4 @@
-- name: Configuracion nfs
+- name: Configuracion contenedores
   hosts: all
   vars_files:
     - "all_vars/container.yaml"
