@@ -2,16 +2,13 @@
   file:
     path: /root/.kube
     state: directory
-  become: yes
 
 - name: Permisos de lectura para el fichero
   file:
     path: /etc/kubernetes/admin.conf
     mode: o+r
-  become: yes
 
 - name: Copy file with owner and permissions
   copy:
     src: /etc/kubernetes/admin.conf
     dest: /root/.kube/config
-  become: yes

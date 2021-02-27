@@ -1,22 +1,18 @@
 - name: Instalar Tigera
   shell:
     cmd: kubectl create -f https://docs.projectcalico.org/manifests/tigera-operator.yaml
-  become: yes
 
 - name: Descargamos el fichero de configuración de Calico
   get_url:
     url: https://docs.projectcalico.org/manifests/custom-resources.yaml
     dest: /tmp/custom-resources.yaml
-  become: yes
 
 - name: Reemplazar cidr
   lineinfile:
     path: /tmp/custom-resources.yaml
     regexp: "cidr: "
     line: "      cidr: 192.169.0.0/16"
-  become: yes
 
 - name: Instalar Calico
   shell:
     cmd: kubectl apply -f /tmp/custom-resources.yaml
-  become: yes

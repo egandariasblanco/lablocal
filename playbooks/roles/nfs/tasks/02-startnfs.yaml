@@ -2,7 +2,6 @@
   dnf:
     name: "{{ rpms_nfs }}"
     state: latest
-  become: yes
 
 - name: Arrancar servicio nfs
   systemd:
@@ -10,4 +9,3 @@
     state: started
     enabled: yes
     masked: no
-  become: yes

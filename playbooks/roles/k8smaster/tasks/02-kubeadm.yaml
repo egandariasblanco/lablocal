@@ -1,13 +1,11 @@
 - name: Configurar kudeadm 1
   shell:
     cmd: kubeadm config images pull
-  become: yes
 
 - name: Configurar kudeadm 2
   shell:
     cmd: kubeadm init --pod-network-cidr 192.169.0.0/16
   register: kudeadm_output
-  become: yes
 
 - name: mensaje
   debug: msg="{{ kudeadm_output }}"

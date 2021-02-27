@@ -3,9 +3,7 @@
     path: /etc/exports   
     line: "{{ mount_path }} {{ item.ip }}(rw,sync)"
   loop: "{{ servers }}"
-  become: yes
 
 - name: Releer la conf. de exports
   shell:
     cmd: exportfs -r
-  become: yes
