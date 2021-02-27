@@ -1,8 +1,8 @@
 - name: Añadir exports de nfs
   lineinfile:
     path: /etc/exports   
-    line: "{{ mount_path }} {{ item }}(rw,sync)"
-  loop: "{{ ips }}"
+    line: "{{ mount_path }} {{ item.ip }}(rw,sync)"
+  loop: "{{ servers }}"
   become: yes
 
 - name: Releer la conf. de exports

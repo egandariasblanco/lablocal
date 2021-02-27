@@ -1,0 +1,7 @@
+- name: Configuracion nfs
+  hosts: all
+  vars_files:
+    - "all_vars/container.yaml"
+  gather_facts: false
+  roles:
+    - containers

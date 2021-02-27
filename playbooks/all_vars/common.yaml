@@ -1,3 +1,8 @@
 rpms: ['chrony', 'wget' ]
-
-ips: [ '192.168.1.39','192.168.1.63' ]
+servers:
+    master:
+      ip: "192.168.1.39"
+      dns: master.local
+    worker1:
+      ip: "192.168.1.63"
+      dns: worker.local
