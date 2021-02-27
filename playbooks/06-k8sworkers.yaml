@@ -1,7 +1,8 @@
 - name: Configuracion workers
-  hosts: master
+  hosts: workers
   vars_files:
     - "all_vars/common.yaml"
+    - "all_vars/k8sworkers.yaml"
   gather_facts: false
   roles:
     - k8sworkers

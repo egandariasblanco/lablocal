@@ -1,0 +1,13 @@
+- name: Configurar puertos trafico para kubernetes
+  ansible.posix.firewalld:
+    port: "{{ item }}"
+    zone: public
+    permanent: yes
+    state: enabled
+  loop: "{{ firewall_ports }}"
+  become: yes
+
+- name: Recargar reglas de firewall
+  shell:
+    cmd: firewall-cmd --reload
+  become: yes

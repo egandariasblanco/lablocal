@@ -1,0 +1,8 @@
+- name: Configurar kudeadm
+  shell:
+    cmd: kubeadm join 192.168.1.39:6443 --token 2l6833.byicktfbigq490bj --discovery-token-ca-cert-hash sha256:79743910c747d93eec6c7b3dfafaed99c8b8da3c830a43dc1b9a780683d9de41
+  become: yes
+
+
+
+  
