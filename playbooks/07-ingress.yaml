@@ -1,0 +1,8 @@
+- name: Instalacion de Ingress
+  hosts: master
+  vars_files:
+    - "all_vars/common.yaml"
+    - "all_vars/ingress.yaml"
+  gather_facts: false
+  roles:
+    - ingress

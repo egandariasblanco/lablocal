@@ -1,0 +1,4 @@
+- name: Instalar ingress
+  shell:
+    cmd: kubectl apply -f {{ ingress_url }}
+  become: yes
