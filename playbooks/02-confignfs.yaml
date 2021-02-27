@@ -1,0 +1,8 @@
+- name: Configuracion nfs
+  hosts: master
+  vars_files:
+    - "all_vars/common.yaml"
+    - "all_vars/nfs.yaml"
+  gather_facts: false
+  roles:
+    - nfs

@@ -1,0 +1,11 @@
+- name: Añadir exports de nfs
+  lineinfile:
+    path: /etc/exports   
+    line: "{{ mount_path }} {{ item }}(rw,sync)"
+  loop: "{{ ips }}"
+  become: yes
+
+- name: Releer la conf. de exports
+  shell:
+    cmd: exportfs -r
+  become: yes
