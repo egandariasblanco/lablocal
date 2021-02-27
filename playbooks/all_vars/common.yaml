@@ -1,0 +1,1 @@
+rpms: ['chrony', 'nfs-utils', 'wget', 'nfs4-acl-tools']
