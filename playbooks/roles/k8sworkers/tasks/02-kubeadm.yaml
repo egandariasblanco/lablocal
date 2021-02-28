@@ -1,6 +1,13 @@
+- name: Copying kubeadm init response token to worker nodes
+  copy: src={{ token_file }} dest=pod_network_token
+
+- name: Joining worker nodes with kubernetes master
+  shell: cat pod_network_token | tail -2
+  register: kudeadm_token_command
+
 - name: Configurar kudeadm
   shell:
-    cmd: kubeadm join 192.168.1.39:6443 --token 2l6833.byicktfbigq490bj --discovery-token-ca-cert-hash sha256:79743910c747d93eec6c7b3dfafaed99c8b8da3c830a43dc1b9a780683d9de41
+    cmd: {{ kudeadm_token_command }}
 
 
 
