@@ -7,8 +7,8 @@ servers:
     worker01:
       type: "worker"
       ip: "10.0.1.11"
-      dns: worker01.local
+      dns: worker01.azure
     worker02:
       type: "worker"
-      ip: "10.0.1.11"
-      dns: worker02.local
+      ip: "10.0.1.12"
+      dns: worker02.azure
