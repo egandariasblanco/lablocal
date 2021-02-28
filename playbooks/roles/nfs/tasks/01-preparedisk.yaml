@@ -1,7 +1,7 @@
-- name: Crear un volume group en /dev/sdb 
+- name: Crear un volume group en /dev/sdc 
   community.general.lvg:
     vg: "{{ nfs_vg }}"
-    pvs: /dev/sdb
+    pvs: /dev/{{ nfs_disk }}
 
 - name: Crear un volumen logico
   community.general.lvol:
