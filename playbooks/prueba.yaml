@@ -1,8 +1,0 @@
-- name: Busquemos ip
-  hosts: all
-  become: false
-  gather_facts: true
-  tasks:
-  - name: ip
-    debug:
-      var: hostvars[inventory_hostname].ansible_docker0.ipv4.address
