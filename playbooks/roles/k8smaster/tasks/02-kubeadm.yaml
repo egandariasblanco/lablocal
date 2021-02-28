@@ -11,6 +11,6 @@
   debug: msg="{{ kudeadm_output }}"
   delegate_to: 127.0.0.1
 
-- name: Guardamos la salida para poder utilizarla en el join de los workers.
+- name: Guardamos la salida para poder utilizarla en el join de los workers
   local_action: copy content={{ kudeadm_output.stdout }} dest={{ token_file }}
   sudo: False
