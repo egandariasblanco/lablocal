@@ -2,7 +2,7 @@
   lineinfile:
     path: /etc/exports   
     line: "{{ mount_path }} {{ item.ip }}(rw,sync,no_root_squash)"
-  loop: "{{ servers }}"
+  loop: "{{ lookup('dict', servers) }}"
 
 - name: Releer la conf. de exports
   shell:
