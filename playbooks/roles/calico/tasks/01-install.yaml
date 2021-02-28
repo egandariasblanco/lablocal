@@ -1,18 +1,14 @@
-- name: Instalar Tigera
-  shell:
-    cmd: kubectl create -f https://docs.projectcalico.org/manifests/tigera-operator.yaml
-
-- name: Descargamos el fichero de configuración de Calico
+- name: Descargamos el fichero de configuración de cilium
   get_url:
-    url: https://docs.projectcalico.org/manifests/custom-resources.yaml
+    url: https://raw.githubusercontent.com/cilium/cilium/v1.9/install/kubernetes/quick-install.yaml
     dest: /tmp/custom-resources.yaml
 
 - name: Reemplazar cidr
   lineinfile:
     path: /tmp/custom-resources.yaml
-    regexp: "cidr: "
-    line: "      cidr: {{ cidr_ip }}/16"
+    regexp: "cluster-pool-ipv4-cidr:"
+    line: "  cluster-pool-ipv4-cidr: {{ cidr_ip }}"
 
-- name: Instalar Calico
+- name: Instalar cilium
   shell:
     cmd: kubectl apply -f /tmp/custom-resources.yaml

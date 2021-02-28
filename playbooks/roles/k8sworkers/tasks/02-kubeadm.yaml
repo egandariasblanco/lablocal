@@ -1,13 +1,5 @@
-- name: Copying kubeadm init response token to worker nodes
-  copy: src={{ token_file }} dest=pod_network_token
-
-- name: Joining worker nodes with kubernetes master
+- name: Ejecutar join al master
   shell: cat pod_network_token | tail -2
-  register: kudeadm_token_command
-
-- name: Configurar kudeadm
-  shell:
-    cmd: {{ kudeadm_token_command }}
 
 
 
