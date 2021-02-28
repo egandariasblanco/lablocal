@@ -3,10 +3,11 @@ ansible_python_interpreter=/usr/bin/python3
 ansible_user=ansible
 
 [master]
-master.local
+master.azure
 
 [workers]
-worker.local
+worker01.azure
+worker02.azure
 
 [nfs]
-master.local
+master.azure
