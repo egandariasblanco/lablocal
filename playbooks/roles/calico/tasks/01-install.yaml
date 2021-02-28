@@ -11,7 +11,7 @@
   lineinfile:
     path: /tmp/custom-resources.yaml
     regexp: "cidr: "
-    line: "      cidr: 192.169.0.0/16"
+    line: "      cidr: {{ cidr_ip }}/16"
 
 - name: Instalar Calico
   shell:

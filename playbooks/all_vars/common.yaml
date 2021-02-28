@@ -2,9 +2,13 @@ rpms: ['chrony', 'wget' ]
 servers:
     master:
       type: "master"
-      ip: "192.168.1.39"
-      dns: master.local
-    worker1:
+      ip: "10.0.1.10"
+      dns: master.azure
+    worker01:
       type: "worker"
-      ip: "192.168.1.63"
-      dns: worker.local
+      ip: "10.0.1.11"
+      dns: worker01.local
+    worker02:
+      type: "worker"
+      ip: "10.0.1.11"
+      dns: worker02.local
