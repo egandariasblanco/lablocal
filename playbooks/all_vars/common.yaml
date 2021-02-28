@@ -1,4 +1,4 @@
-rpms: ['chrony', 'wget' ]
+rpms: ['chrony', 'wget', 'nfs-utils', 'nfs4-acl-tools' ]
 servers:
     master:
       type: "master"
