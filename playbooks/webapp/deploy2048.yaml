@@ -61,8 +61,8 @@ metadata:
   namespace: game
   labels:
     app: game
-  #annotations:
-  #  haproxy.org/path-rewrite: "/"
+  annotations:
+    nginx.ingress.kubernetes.io/add-base-url: "true"
 spec:
   rules:
   - host: game.bar
